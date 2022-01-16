@@ -8,25 +8,18 @@ export const AppRouter = () => {
   return (
     <BrowserRouter>
       <Routes>
-        {/* https://reactrouter.com/docs/en/v6/getting-started/tutorial#add-some-routes */}
-        {/* <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="expenses" element={<Expenses />} />
-        <Route path="invoices" element={<Invoices />} /> */}
-
-        {/* https://reactrouter.com/docs/en/v6/getting-started/tutorial#nested-routes */}
-        <Route path="/" element={<Home />}>
-          <Route path="expenses" element={<Expenses />} />
-          <Route path="invoices" element={<Invoices />}>
-            <Route
-              index
-              element={
-                <main style={{ padding: '1rem' }}>
-                  <p>Select an invoice</p>
-                </main>
-              }
-            />
-            <Route path=":invoiceId" element={<Invoice />} />
-          </Route>
+        <Route path="invoices" element={<Invoices />}>
+          <Route
+            index
+            element={
+              <main style={{ padding: '1rem' }}>
+                <p>Select an invoice</p>
+              </main>
+            }
+          />
+          <Route path=":invoiceId" element={<Invoice />} />
         </Route>
 
         <Route

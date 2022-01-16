@@ -61,8 +61,8 @@ export const Invoices = () => {
 };
 
 const QueryNavLink = ({ children, to, ...props }: NavLinkProps) => {
-  let location = useLocation();
-  console.log({ location });
+  const location = useLocation();
+
   return (
     <NavLink to={to + location.search} {...props}>
       {children}
