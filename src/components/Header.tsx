@@ -17,7 +17,7 @@ const menuItems = [
 
 export const Header = () => {
   return (
-    <div className="flex w-full bg-indigo-400 border-b px-2 py-4 gap-8">
+    <div className="flex h-16 w-full bg-indigo-400 border-b px-2 gap-8">
       <h1 className="text-3xl flex items-center">Bookkeeper</h1>
       <nav className="flex items-center gap-4">
         {menuItems.map(({ title, to }, i) => {

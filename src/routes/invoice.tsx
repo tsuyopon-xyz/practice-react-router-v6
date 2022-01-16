@@ -7,7 +7,7 @@ export const Invoice = () => {
   const invoice = getInvoice(parseInt(params.invoiceId!, 10))!;
 
   return (
-    <main style={{ padding: '1rem' }}>
+    <main className="p-4">
       <h2>Total Due: {invoice.amount}</h2>
       <p>
         {invoice.name}: {invoice.number}

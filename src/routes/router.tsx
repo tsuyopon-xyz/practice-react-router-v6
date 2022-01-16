@@ -14,18 +14,17 @@ export const AppRouter = () => {
           <Route
             index
             element={
-              <main style={{ padding: '1rem' }}>
+              <main className="p-4">
                 <p>Select an invoice</p>
               </main>
             }
           />
           <Route path=":invoiceId" element={<Invoice />} />
         </Route>
-
         <Route
           path="*"
           element={
-            <main style={{ padding: '1rem' }}>
+            <main className="p-4">
               <p>There's nothing here!</p>
             </main>
           }
