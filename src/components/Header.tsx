@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 const menuItems = [
   {
@@ -18,7 +18,9 @@ const menuItems = [
 export const Header = () => {
   return (
     <div className="flex h-16 w-full bg-indigo-400 border-b px-2 gap-8">
-      <h1 className="text-3xl flex items-center">Bookkeeper</h1>
+      <h1 className="text-3xl flex items-center text-white">
+        <Link to="/">Bookkeeper</Link>
+      </h1>
       <nav className="flex items-center gap-4">
         {menuItems.map(({ title, to }, i) => {
           return (
