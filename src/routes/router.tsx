@@ -7,9 +7,16 @@ export const AppRouter = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
+        {/* https://reactrouter.com/docs/en/v6/getting-started/tutorial#add-some-routes */}
+        {/* <Route path="/" element={<Home />} />
         <Route path="expenses" element={<Expenses />} />
-        <Route path="invoices" element={<Invoices />} />
+        <Route path="invoices" element={<Invoices />} /> */}
+
+        {/* https://reactrouter.com/docs/en/v6/getting-started/tutorial#nested-routes */}
+        <Route path="/" element={<Home />}>
+          <Route path="expenses" element={<Expenses />} />
+          <Route path="invoices" element={<Invoices />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );
