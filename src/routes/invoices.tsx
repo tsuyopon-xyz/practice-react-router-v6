@@ -1,4 +1,4 @@
-import { Link, Outlet } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
 import { Layout } from 'src/components/Layout';
 import { getInvoices } from 'src/data/invoices';
 
@@ -15,13 +15,16 @@ export const Invoices = () => {
           }}
         >
           {invoices.map((invoice) => (
-            <Link
+            <NavLink
               style={{ display: 'block', margin: '1rem 0' }}
               to={`/invoices/${invoice.number}`}
               key={invoice.number}
+              className={({ isActive }) =>
+                isActive ? 'text-red-500' : 'text-blue-500'
+              }
             >
               {invoice.name}
-            </Link>
+            </NavLink>
           ))}
         </nav>
         <Outlet />

@@ -1,4 +1,19 @@
-import { Link, Outlet } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
+
+const menuItems = [
+  {
+    to: '/',
+    title: 'Home',
+  },
+  {
+    to: '/invoices',
+    title: 'Invoices',
+  },
+  {
+    to: '/expenses',
+    title: 'Expenses',
+  },
+];
 
 export const Header = () => {
   return (
@@ -10,9 +25,36 @@ export const Header = () => {
           paddingBottom: '1rem',
         }}
       >
-        <Link to="/">Home</Link> |<span> </span>
-        <Link to="/invoices">Invoices</Link> |<span> </span>
-        <Link to="/expenses">Expenses</Link>
+        {menuItems.map(({ title, to }, i) => {
+          if (i === menuItems.length - 1) {
+            return (
+              <NavLink
+                key={i}
+                to={to}
+                className={({ isActive }) =>
+                  isActive ? 'font-bold text-gray-900' : 'text-gray-600'
+                }
+              >
+                {title}
+              </NavLink>
+            );
+          } else {
+            return (
+              <>
+                <NavLink
+                  key={i}
+                  to={to}
+                  className={({ isActive }) =>
+                    isActive ? 'font-bold text-gray-900' : 'text-gray-600'
+                  }
+                >
+                  {title}
+                </NavLink>
+                <span> </span> | <span> </span>
+              </>
+            );
+          }
+        })}
       </nav>
       <Outlet />
     </div>
