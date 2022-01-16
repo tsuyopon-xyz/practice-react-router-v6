@@ -17,26 +17,20 @@ const menuItems = [
 
 export const Header = () => {
   return (
-    <div>
-      <h1>Bookkeeper</h1>
-      <nav
-        style={{
-          borderBottom: 'solid 1px',
-          paddingBottom: '1rem',
-        }}
-      >
+    <div className="flex w-full bg-indigo-400 border-b px-2 py-4 gap-8">
+      <h1 className="text-3xl flex items-center">Bookkeeper</h1>
+      <nav className="flex items-center gap-4">
         {menuItems.map(({ title, to }, i) => {
           return (
             <span key={i}>
               <NavLink
                 to={to}
                 className={({ isActive }) =>
-                  isActive ? 'font-bold text-gray-900' : 'text-gray-600'
+                  isActive ? 'font-bold text-amber-300' : 'text-white'
                 }
               >
                 {title}
               </NavLink>
-              {' | '}
             </span>
           );
         })}
