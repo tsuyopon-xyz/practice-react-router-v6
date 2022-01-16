@@ -3,7 +3,7 @@ import { Layout } from 'src/components/Layout';
 export const Home = () => {
   return (
     <Layout>
-      <main style={{ padding: '1rem 0' }}>
+      <main className="py-4 px-0">
         <h2>Home</h2>
       </main>
     </Layout>
